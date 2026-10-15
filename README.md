@@ -148,5 +148,6 @@ This is a realistic portfolio project intended to demonstrate analytical and eng
 - Deployment with Docker and CI/CD
 - Advanced ensemble ML models
 
+## Expected Portfolio Outcome
 
 The project demonstrates a full lifecycle from business requirement to analytical insight to actionable software solution, making it suitable for an interview, resume, and GitHub portfolio.

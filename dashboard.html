@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block title %}Executive Dashboard{% endblock %}
+{% block page_title %}Executive Dashboard{% endblock %}
+
+{% block content %}
+<section class="cards-grid">
+    <div class="stat-card">
+        <span>Total Shipments</span>
+        <strong>{{ metrics.total_shipments }}</strong>
+    </div>
+    <div class="stat-card warning">
+        <span>Delayed Shipments</span>
+        <strong>{{ metrics.delayed_shipments }}</strong>
+    </div>
+    <div class="stat-card success">
+        <span>On-Time Delivery</span>
+        <strong>{{ metrics.on_time_delivery_pct }}%</strong>
+    </div>
+    <div class="stat-card danger">
+        <span>SLA Breach</span>
+        <strong>{{ metrics.sla_breach_pct }}%</strong>
+    </div>
+    <div class="stat-card">
+        <span>Avg Delivery Time</span>
+        <strong>{{ metrics.average_delivery_time_hours }} hrs</strong>
+    </div>
+    <div class="stat-card info">
+        <span>Open Exceptions</span>
+        <strong>{{ metrics.open_exceptions }}</strong>
+    </div>
+</section>
+
+<section class="panel-grid">
+    <div class="panel">
+        <h3>Performance Snapshot</h3>
+        <ul class="list-view">
+            <li><span>Carrier reliability</span> <strong>92.3%</strong></li>
+            <li><span>Hub congestion</span> <strong>18.6%</strong></li>
+            <li><span>Exception resolution</span> <strong>4.2 days</strong></li>
+            <li><span>High-risk shipments</span> <strong>8.1%</strong></li>
+        </ul>
+    </div>
+    <div class="panel">
+        <h3>Operational Focus</h3>
+        <ul class="list-view">
+            <li><span>Top delay reason</span> <strong>Hub Congestion</strong></li>
+            <li><span>Worst hub</span> <strong>HUB002</strong></li>
+            <li><span>Worst carrier</span> <strong>CAR005</strong></li>
+            <li><span>Priority route</span> <strong>North-South Lane</strong></li>
+        </ul>
+    </div>
+</section>
+{% endblock %}

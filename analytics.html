@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block title %}Analytics{% endblock %}
+{% block page_title %}Analytics{% endblock %}
+
+{% block content %}
+<section class="cards-grid">
+    <div class="stat-card">
+        <span>Total Shipments</span>
+        <strong>{{ metrics.total_shipments }}</strong>
+    </div>
+    <div class="stat-card warning">
+        <span>Delayed</span>
+        <strong>{{ metrics.delayed_shipments }}</strong>
+    </div>
+    <div class="stat-card danger">
+        <span>SLA Breach</span>
+        <strong>{{ metrics.sla_breach_pct }}%</strong>
+    </div>
+    <div class="stat-card success">
+        <span>On-Time</span>
+        <strong>{{ metrics.on_time_delivery_pct }}%</strong>
+    </div>
+</section>
+
+<section class="panel-grid two-column">
+    <div class="panel">
+        <h3>Risk Summary</h3>
+        <ul class="list-view">
+            {% for item in risk_summary %}
+            <li><span>{{ item.risk_group }}</span> <strong>{{ item.count }}</strong></li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="panel">
+        <h3>Analytical Notes</h3>
+        <ul class="list-view">
+            <li><span>Recurring issue</span> <strong>Hub Congestion</strong></li>
+            <li><span>Top carrier weakness</span> <strong>CAR005</strong></li>
+            <li><span>Problem route</span> <strong>North-South lane</strong></li>
+            <li><span>Priority recommendation</span> <strong>Capacity re-balancing</strong></li>
+        </ul>
+    </div>
+</section>
+{% endblock %}

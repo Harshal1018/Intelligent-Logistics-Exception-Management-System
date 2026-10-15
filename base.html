@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Logistics Exception System{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="brand">
+                <h2>ILEMS</h2>
+                <span>Intelligent Logistics Exception Management System</span>
+            </div>
+            <nav>
+                <a href="{{ url_for('routes.dashboard') }}">Executive Dashboard</a>
+                <a href="{{ url_for('routes.shipments_page') }}">Shipment Search</a>
+                <a href="{{ url_for('routes.exception_queue') }}">Exception Queue</a>
+                <a href="{{ url_for('routes.risk_prediction_page') }}">Risk Prediction</a>
+                <a href="{{ url_for('routes.analytics_page') }}">Analytics</a>
+                <a href="{{ url_for('routes.create_exception_page') }}">Create Exception</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="topbar">
+                <div>
+                    <h1>{% block page_title %}Operations Center{% endblock %}</h1>
+                </div>
+                <div class="topbar-actions">
+                    <span class="status-badge success">System Online</span>
+                    <a href="{{ url_for('routes.login_page') }}" class="logout-link">Logout</a>
+                </div>
+            </header>
+            {% block content %}{% endblock %}
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block title %}Exception Details{% endblock %}
+{% block page_title %}Exception Details{% endblock %}
+
+{% block content %}
+<div class="panel form-panel">
+    <h3>{% if exception %}Exception {{ exception.exception_id }}{% else %}Create Exception{% endif %}</h3>
+    <form method="POST" action="{{ url_for('routes.create_exception_page') }}">
+        <div class="form-grid">
+            <label>Shipment ID
+                <input type="text" name="shipment_id" value="{{ exception.shipment_id if exception else '' }}">
+            </label>
+            <label>Exception Reason
+                <input type="text" name="exception_reason" value="{{ exception.exception_reason if exception else '' }}">
+            </label>
+            <label>Exception Type
+                <input type="text" name="exception_type" value="{{ exception.exception_type if exception else 'Operational Delay' }}">
+            </label>
+            <label>Severity
+                <select name="severity">
+                    <option>Low</option>
+                    <option>Medium</option>
+                    <option>High</option>
+                    <option>Critical</option>
+                </select>
+            </label>
+            <label>Status
+                <select name="status">
+                    <option>Open</option>
+                    <option>Assigned</option>
+                    <option>In Progress</option>
+                    <option>Resolved</option>
+                    <option>Closed</option>
+                </select>
+            </label>
+            <label>Assigned To
+                <input type="text" name="assigned_to" value="{{ exception.assigned_to if exception else 'Ops Team' }}">
+            </label>
+            <label class="full-width">Notes
+                <textarea name="notes">{{ exception.notes if exception else '' }}</textarea>
+            </label>
+        </div>
+        <button type="submit">Save</button>
+    </form>
+</div>
+{% endblock %}

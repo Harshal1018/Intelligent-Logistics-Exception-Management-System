@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}Shipment Detail{% endblock %}
+{% block page_title %}Shipment Details{% endblock %}
+
+{% block content %}
+{% if shipment %}
+<div class="toolbar">
+    <a class="button-link" href="{{ url_for('routes.shipment_pdf', shipment_id=shipment.shipment_id) }}">
+        Download shipment report (PDF)
+    </a>
+</div>
+<section class="detail-layout">
+    <div class="panel">
+        <h3>Shipment Information</h3>
+        <ul class="detail-list">
+            <li><span>Shipment ID</span><strong>{{ shipment.shipment_id }}</strong></li>
+            <li><span>Customer ID</span><strong>{{ shipment.customer_id }}</strong></li>
+            <li><span>Carrier</span><strong>{{ shipment.carrier_id }}</strong></li>
+            <li><span>Weight</span><strong>{{ shipment.weight_kg }} kg</strong></li>
+            <li><span>Distance</span><strong>{{ shipment.distance_km }} km</strong></li>
+            <li><span>Priority</span><strong>{{ shipment.priority }}</strong></li>
+            <li><span>Status</span><strong>{{ shipment.status }}</strong></li>
+        </ul>
+    </div>
+
+    <div class="panel risk-panel">
+        <h3>Risk Prediction</h3>
+        <div class="risk-score">{{ prediction.delay_probability }}%</div>
+        <p><strong>Risk:</strong> {{ prediction.risk_category }}</p>
+        <p><strong>Recommended action:</strong> {{ prediction.recommended_action }}</p>
+    </div>
+</section>
+{% else %}
+<p>No shipment found.</p>
+{% endif %}
+{% endblock %}

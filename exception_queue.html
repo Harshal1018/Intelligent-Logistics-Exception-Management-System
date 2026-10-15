@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}Exception Queue{% endblock %}
+{% block page_title %}Exception Queue{% endblock %}
+
+{% block content %}
+<div class="table-wrap">
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Shipment</th>
+                <th>Reason</th>
+                <th>Severity</th>
+                <th>Status</th>
+                <th>Assigned To</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in exceptions %}
+            <tr>
+                <td>{{ item.exception_id }}</td>
+                <td>{{ item.shipment_id }}</td>
+                <td>{{ item.exception_reason }}</td>
+                <td>{{ item.severity }}</td>
+                <td>{{ item.status }}</td>
+                <td>{{ item.assigned_to }}</td>
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="6">No exceptions found.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

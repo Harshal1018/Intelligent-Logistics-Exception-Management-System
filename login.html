@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | ILEMS</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="login-body">
+    <div class="login-overlay"></div>
+    <div class="login-card">
+        <div class="brand login-brand">
+            <h2>ILEMS</h2>
+            <span>Intelligent Logistics Exception Management System</span>
+        </div>
+        <h3>Operations Login</h3>
+        <form method="POST" action="{{ url_for('routes.login_submit') }}">
+            <label for="username">Username</label>
+            <input id="username" name="username" type="text" value="ops.manager" required>
+
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password" value="password123" required>
+
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</body>
+</html>

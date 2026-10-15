@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block title %}Shipment Search{% endblock %}
+{% block page_title %}Shipment Search{% endblock %}
+
+{% block content %}
+<div class="toolbar">
+    <form class="search-form" method="GET" action="{{ url_for('routes.search_page') }}">
+        <input type="text" name="q" placeholder="Search by shipment ID, status, hub or carrier" value="{{ query or '' }}">
+        <button type="submit">Search</button>
+    </form>
+</div>
+
+<div class="table-wrap">
+    <table>
+        <thead>
+            <tr>
+                <th>Shipment ID</th>
+                <th>Carrier</th>
+                <th>Origin</th>
+                <th>Destination</th>
+                <th>Status</th>
+                <th>Priority</th>
+                <th>Delay Risk</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for shipment in shipments %}
+            <tr>
+                <td>{{ shipment.shipment_id }}</td>
+                <td>{{ shipment.carrier_id }}</td>
+                <td>{{ shipment.origin_hub_id }}</td>
+                <td>{{ shipment.destination_hub_id }}</td>
+                <td>{{ shipment.status }}</td>
+                <td>{{ shipment.priority }}</td>
+                <td>{{ 'Delayed' if shipment.delay_flag == 1 else 'On Time' }}</td>
+                <td><a href="{{ url_for('routes.shipment_detail', shipment_id=shipment.shipment_id) }}">View</a></td>
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="8">No shipments found.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

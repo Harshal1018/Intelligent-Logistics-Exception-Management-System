@@ -17,17 +17,14 @@ A logistics company handles thousands of shipments daily. Operational delays ari
 - Recommend operational actions.
 - Provide management dashboards and exception monitoring.
 
-## Project Phases
+<img width="1905" height="891" alt="Screenshot 2026-10-15 120303" src="https://github.com/user-attachments/assets/ee696e40-157c-481a-90b8-d1d715be10bd" />
+<img width="1911" height="899" alt="Screenshot 2026-10-15 115840" src="https://github.com/user-attachments/assets/e5870061-07d9-4ca4-9680-4be1ef14302c" />
+<img width="1900" height="768" alt="Screenshot 2026-10-15 120044" src="https://github.com/user-attachments/assets/fe75720e-820d-4eb4-9e1e-b4bc99267905" />
+<img width="1865" height="891" alt="Screenshot 2026-10-15 120124" src="https://github.com/user-attachments/assets/b7b21459-1be4-49f5-9ff6-7f39a8096ef9" />
+<img width="1901" height="863" alt="Screenshot 2026-10-15 120224" src="https://github.com/user-attachments/assets/acd017db-3a89-4da5-9361-6d130c8beef2" />
+<img width="1896" height="867" alt="Screenshot 2026-10-15 120244" src="https://github.com/user-attachments/assets/e4da3e35-2017-4c9f-b79d-fd0bcc13cce8" />
 
-1. Phase 1: Requirements and business problem definition
-2. Phase 2: Synthetic data generation with realistic logistics logic
-3. Phase 3: MySQL database design and schema
-4. Phase 4: Python-based data analysis and KPI calculation
-5. Phase 5: Machine learning for shipment delay prediction
-6. Phase 6: Power BI dashboard design and KPI layout
-7. Phase 7: Web application development
-8. Phase 8: Testing and requirement traceability
-9. Phase 9: Business insights and recommendations
+
 
 ## Technology Stack
 
